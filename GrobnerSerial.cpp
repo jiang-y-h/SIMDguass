@@ -105,11 +105,14 @@ int main()
                 elimRow->_v[i] = elimTerm[tempElimRow]._v[i] ^ elimRow->_v[i];
             }
             tempElimRow = elimRow->GetRow();
+
+
             //if (tempElimRow == elimRow->size) {
             //    fileResult << endl;
             //}
+            
             if (tempElimRow < elimRow->size && flag[tempElimRow] == 0) {
-                //flag[tempElimRow] = 1;
+                flag[tempElimRow] = 1;
                 for (unsigned int c = 0; c < column / 32 + 1; c++) {
                     elimTerm[tempElimRow]._v[c] = elimRow->_v[c];
                 }

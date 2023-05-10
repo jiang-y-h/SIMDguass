@@ -22,7 +22,7 @@ void unaligned(int n) {
 
         for (int i = k + 1; i < n; i++) {
             t1 = vmovq_n_f32(m[i][k]);
-            for (int j = k; j < n; j += 4) {
+            for (int j = k+1; j < n; j += 4) {
                 t2 = vld1q_f32(m[k] + j);
                 float32x4_t t3 = vld1q_f32(m[i] + j);
                 t2 = vmulq_f32(t2, t1);
@@ -161,7 +161,7 @@ int main()
 
 
         timeval start, finish;
-        开始计时检测
+        //开始计时检测
         gettimeofday(&start,NULL);
         serial(t);
         gettimeofday(&finish,NULL);

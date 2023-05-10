@@ -307,7 +307,7 @@ int main()
         for (int j = 0; j < n; j++)
             m1[i][j] = m[i][j];
 
-    for (int t = 1000; t <= n; t += 1000) {
+    for (int t = 1000; t <= n; t += 1000){
 
         start();
         serial(t);
